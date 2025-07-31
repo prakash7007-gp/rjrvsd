@@ -68,6 +68,47 @@ const Programs = () => {
         </div>
       </section>
 
+      {/* Admission Process */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 fade-in">
+            <h2 className="text-4xl font-bold text-foreground mb-6">Admission Process</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Simple steps to begin your journey with us
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { step: "1", title: "Apply Online", description: "Submit your application through our online portal" },
+                { step: "2", title: "Document Review", description: "Our admission team reviews your documents" },
+                { step: "3", title: "Interview", description: "Personal interview with faculty members" },
+                { step: "4", title: "Confirmation", description: "Receive admission confirmation and join us" }
+              ].map((item, index) => (
+                <div
+                  key={index}
+                  className="text-center slide-up"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="text-center mt-12 slide-up" style={{ animationDelay: '0.8s' }}>
+            <Button size="lg" className="btn-primary px-8 py-4 text-lg">
+              Start Your Application
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Programs Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -123,46 +164,7 @@ const Programs = () => {
         </div>
       </section>
 
-      {/* Admission Process */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16 fade-in">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Admission Process</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Simple steps to begin your journey with us
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {[
-                { step: "1", title: "Apply Online", description: "Submit your application through our online portal" },
-                { step: "2", title: "Document Review", description: "Our admission team reviews your documents" },
-                { step: "3", title: "Interview", description: "Personal interview with faculty members" },
-                { step: "4", title: "Confirmation", description: "Receive admission confirmation and join us" }
-              ].map((item, index) => (
-                <div
-                  key={index}
-                  className="text-center slide-up"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    {item.step}
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="text-center mt-12 slide-up" style={{ animationDelay: '0.8s' }}>
-            <Button size="lg" className="btn-primary px-8 py-4 text-lg">
-              Start Your Application
-            </Button>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

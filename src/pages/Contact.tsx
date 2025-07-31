@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
+import CTASection from "@/components/CTASection";
 
 const Contact = () => {
   const contactInfo = [
@@ -34,6 +35,7 @@ const Contact = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <TopBar />
       <Navbar />
@@ -244,6 +246,8 @@ const Contact = () => {
         </div>
       </section>
     </div>
+     <CTASection />
+     </>
   );
 };
 

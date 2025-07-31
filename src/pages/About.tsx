@@ -1,6 +1,7 @@
 import { Award, Users, Target, Heart, BookOpen, Globe } from "lucide-react";
 import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
+import CTASection from "@/components/CTASection";
 
 const About = () => {
   const values = [
@@ -36,6 +37,7 @@ const About = () => {
   ];
 
   return (
+    <>
     <div className="min-h-screen bg-background">
       <TopBar />
       <Navbar />
@@ -167,7 +169,11 @@ const About = () => {
         </div>
       </section> */}
     </div>
+    <CTASection />
+    </>
   );
+  
+
 };
 
 export default About;

@@ -1,5 +1,7 @@
 import { BookOpen, Users, Award, Globe, Lightbulb, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import Certification from "@/pages/Certification";
 
 const FeaturesSection = () => {
   const features = [
@@ -7,32 +9,32 @@ const FeaturesSection = () => {
       icon: BookOpen,
       title: "Academic Excellence",
       description: "World-class curriculum designed by industry experts and academic leaders",
-      gradient: "from-primary to-primary-dark"
+      gradient: "bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400"
     },
     {
       icon: Users,
       title: "Expert Faculty",
       description: "Learn from experienced professors and industry professionals",
-      gradient: "from-education-blue to-primary"
+      gradient: "from-primary to-primary-dark"
     },
-    {
-      icon: Award,
-      title: "Industry Recognition",
-      description: "Accredited programs recognized by top employers worldwide",
-      gradient: "from-success to-education-blue"
-    },
-    {
-      icon: Globe,
-      title: "Global Network",
-      description: "Connect with alumni and professionals across 50+ countries",
-      gradient: "from-warning to-primary"
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Hub",
-      description: "State-of-the-art labs and research facilities for hands-on learning",
-      gradient: "from-primary to-success"
-    },
+    // {
+    //   icon: Award,
+    //   title: "Industry Recognition",
+    //   description: "Accredited programs recognized by top employers worldwide",
+    //   gradient: "bg-amber-500 "
+    // },
+    // {
+    //   icon: Globe,
+    //   title: "Global Network",
+    //   description: "Connect with alumni and professionals across 50+ countries",
+    //   gradient: "from-warning to-primary"
+    // },
+    // {
+    //   icon: Lightbulb,
+    //   title: "Innovation Hub",
+    //   description: "State-of-the-art labs and research facilities for hands-on learning",
+    //   gradient: "from-primary to-success"
+    // },
     {
       icon: Target,
       title: "Career Success",
@@ -42,14 +44,15 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <>
+    <section className="py-20 bg-gradient-to-br from-education-blue-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Why Choose <span className="text-primary">RJR VSD</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience world-class education with cutting-edge facilities, expert faculty, 
+            Experience world-class education with cutting-edge facilities, expert faculty,
             and a commitment to your success that sets us apart.
           </p>
         </div>
@@ -61,14 +64,14 @@ const FeaturesSection = () => {
               <div
                 key={index}
                 className="group relative bg-card rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-500 hover:-translate-y-2 overflow-hidden"
-                style={{ 
+                style={{
                   animationDelay: `${index * 0.1}s`,
                   animation: `fadeIn 0.8s ease-out forwards ${index * 0.1}s both`
                 }}
               >
                 {/* Gradient Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                
+
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
                   <IconComponent className="w-8 h-8 text-white" />
@@ -90,12 +93,22 @@ const FeaturesSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="btn-primary px-8 py-4 text-lg">
-            Explore Our Programs
-          </Button>
+          <Link to="/programs">
+            <Button size="lg" className="btn-primary px-8 py-4 text-lg">
+              Explore Our Programs
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
+     <div className="bg-gradient-to-br from-education-blue-light py-2 px-4">
+      <Certification
+        name="S. R. Jeyadurai"
+        course=" Diplomo in varma massage"
+        date="July 31, 2025"
+      />
+    </div>
+    </>
   );
 };
 
