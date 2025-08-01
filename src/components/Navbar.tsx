@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo7.jpeg";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

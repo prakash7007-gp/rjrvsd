@@ -6,6 +6,8 @@ import FeaturesSection from "@/components/FeaturesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Varmacourse from "./Varmacourse";
+import CourseDetails from "./Coursedetalis";
+import HeroSection1 from "@/components/Herosection1";
 
 const Index = () => {
   return (
@@ -13,12 +15,13 @@ const Index = () => {
       {/* <TopBar /> */}
       <Navbar />
       <main>
-        <HeroSection />
+        <HeroSection1 />
         {/* <StatisticsSection /> */}
         <FeaturesSection />
         <Varmacourse />
         <TestimonialsSection />
         <CTASection />
+        <CourseDetails />
       </main>
     </div>
   );
