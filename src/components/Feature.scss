@@ -1,0 +1,103 @@
+// FeaturesSection.scss
+
+.features-section {
+  padding: 5rem 0;
+  background: url("/assets/loge4.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+
+  .features-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+
+      span {
+        color: var(--primary);
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: var(--muted-foreground);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .feature-card {
+    background: var(--card);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-large);
+
+      .icon-wrapper {
+        transform: scale(1.1);
+      }
+
+      .feature-title {
+        color: var(--primary);
+      }
+
+      .overlay {
+        opacity: 0.1;
+      }
+
+      .hover-border {
+        border-color: rgba(var(--primary-rgb), 0.2);
+      }
+    }
+
+    .icon-wrapper {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(to bottom right, var(--primary), var(--primary-dark));
+      border-radius: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      transition: transform 0.5s;
+    }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--foreground);
+      margin-bottom: 1rem;
+      transition: color 0.3s;
+    }
+
+    .feature-description {
+      color: var(--muted-foreground);
+    }
+
+    .overlay {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, var(--primary), var(--primary-dark));
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .hover-border {
+      position: absolute;
+      inset: 0;
+      border: 2px solid transparent;
+      border-radius: 1rem;
+      transition: border-color 0.5s;
+    }
+  }
+}

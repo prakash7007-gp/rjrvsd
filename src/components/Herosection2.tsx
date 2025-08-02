@@ -1,29 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroVideo from "@/assets/background1.mp4";
+import { ArrowRight } from "lucide-react";
+import heroImage from "@/assets/hero3.png"; // ✅ Your background image
 
 const HeroSection1 = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden ">
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={heroVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Blurred Background Image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover filter scale-110"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      />
 
-      
+      {/* Red Overlay */}
+      <div className="absolute inset-0 bg-red-900 opacity-50 mix-blend-multiply" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto fade-in mb-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-10 text-shadow leading-tight">
-            RJR Voctional Skill
+          <h1 className="text-5xl md:text-7xl font-bold mb-10 leading-tight text-shadow">
+            RJR Vocational Skill
             <span className="block text-primary-light">Development</span>
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-white/90 max-w-3xl mx-auto leading-relaxed">
@@ -39,13 +37,6 @@ const HeroSection1 = () => {
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            {/* <Button
-              size="lg"
-              className="btn-danger text-lg px-8 py-4 h-auto"
-            >
-              <Play className="mr-2 w-5 h-5 " />
-              Virtual Campus Tour
-            </Button> */}
           </div>
         </div>
       </div>
@@ -53,4 +44,4 @@ const HeroSection1 = () => {
   );
 };
 
-export default HeroSection1; 
+export default HeroSection1;

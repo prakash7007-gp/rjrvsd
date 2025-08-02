@@ -7,16 +7,19 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Varmacourse from "./Varmacourse";
 import CourseDetails from "./Coursedetalis";
+import Herosection2 from "@/components/Herosection2";
 import HeroSection1 from "@/components/Herosection1";
-
+ import Smallabout from "@/components/Smallabout";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* <TopBar /> */}
+      <TopBar />
       <Navbar />
       <main>
-        <HeroSection1 />
+        {/* <HeroSection1 /> */}
+        <Herosection2 />
         {/* <StatisticsSection /> */}
+        <Smallabout />
         <FeaturesSection />
         <Varmacourse />
         <TestimonialsSection />

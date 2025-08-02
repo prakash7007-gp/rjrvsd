@@ -1,27 +1,33 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "../assets/logo7.jpeg";
+import bgImage from "../assets/lighred.png"; // 🔁 Replace with your image if different
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const [showModal, setShowModal] = useState(false);
 
-
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Course Detalis", href: "/programs" },
     { name: "Contact", href: "/contact" },
-    { name: "Student Portal", href: "/portal" },
-
+    // { name: "Student Portal", href: "/portal" },
   ];
 
   return (
     <>
-      <nav className="bg-white/95 backdrop-blur-sm shadow-soft sticky top-0 z-50 border-b border-border">
+      <nav
+        className="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50 border-b border-border relative"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="container mx-auto px-2 md:px-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center h-auto md:h-16 py-2 md:py-0">
             {/* Logo and Title */}
@@ -34,36 +40,32 @@ const Navbar = () => {
                 />
               </div>
               <div>
-                <h1 className="text-base md:text-xl font-bold text-foreground leading-tight">
+                <h1 className="text-shadow leading-tight text-white md:text-xl font-bold text-foreground leading-tight">
                   RJR VSD Educational Trust
                 </h1>
-                <p className="text-[10px] md:text-xs    text-muted-foreground leading-tight">
+                <p className="text-[10px] text-shadow leading-tight text-white md:text-xs text-muted-foreground leading-tight">
                   Affiliated Manonmaniam Sundaranar University
                 </p>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navLinks.map((link) => (
-                link.href.startsWith('#') ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="nav-link"
-                  >
+            <div className="hidden md:flex items-center space-x-8 text-shadow-sm  font-bold  ">
+              {navLinks.map((link) =>
+                link.href.startsWith("#") ? (
+                  <a key={link.name} href={link.href} className="nav-link">
                     {link.name}
                   </a>
                 ) : (
                   <Link
                     key={link.name}
                     to={link.href}
-                    className={`nav-link ${location.pathname === link.href ? 'text-primary' : ''}`}
+                    className={`nav-link ${location.pathname === link.href ? "text-primary" : ""}`}
                   >
                     {link.name}
                   </Link>
                 )
-              ))}
+              )}
               <Button className="btn-primary px-6" onClick={() => setShowModal(true)}>
                 Apply Now
               </Button>
@@ -83,8 +85,8 @@ const Navbar = () => {
           {isMenuOpen && (
             <div className="md:hidden w-full bg-white/95 backdrop-blur-sm border-t border-border shadow-lg absolute left-0 top-full z-40">
               <div className="flex flex-col space-y-4 px-4 py-4">
-                {navLinks.map((link) => (
-                  link.href.startsWith('#') ? (
+                {navLinks.map((link) =>
+                  link.href.startsWith("#") ? (
                     <a
                       key={link.name}
                       href={link.href}
@@ -97,13 +99,15 @@ const Navbar = () => {
                     <Link
                       key={link.name}
                       to={link.href}
-                      className={`text-foreground/80 hover:text-primary transition-colors ${location.pathname === link.href ? 'text-primary' : ''}`}
+                      className={`text-foreground/80 hover:text-primary transition-colors ${
+                        location.pathname === link.href ? "text-primary" : ""
+                      }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {link.name}
                     </Link>
                   )
-                ))}
+                )}
                 <Button className="btn-primary w-full mt-4" onClick={() => setShowModal(true)}>
                   Apply Now
                 </Button>
@@ -112,6 +116,8 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md relative">
@@ -120,29 +126,17 @@ const Navbar = () => {
             <form>
               <div className="mb-4">
                 <label className="block mb-1 text-sm">Name</label>
-                <input
-                  type="text"
-                  className="w-full border px-3 py-2 rounded"
-                  placeholder="Your Name"
-                />
+                <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Your Name" />
               </div>
 
               <div className="mb-4">
                 <label className="block mb-1 text-sm">Email</label>
-                <input
-                  type="email"
-                  className="w-full border px-3 py-2 rounded"
-                  placeholder="Your Email"
-                />
+                <input type="email" className="w-full border px-3 py-2 rounded" placeholder="Your Email" />
               </div>
 
               <div className="mb-4">
                 <label className="block mb-1 text-sm">Course</label>
-                <input
-                  type="text"
-                  className="w-full border px-3 py-2 rounded"
-                  placeholder="Interested Course"
-                />
+                <input type="text" className="w-full border px-3 py-2 rounded" placeholder="Interested Course" />
               </div>
 
               <div className="flex justify-end gap-2">
@@ -153,10 +147,7 @@ const Navbar = () => {
                 >
                   Cancel
                 </button>
-                <button
-                  type="submit"
-                  className="bg-blue-600 text-white px-4 py-2 rounded"
-                >
+                <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
                   Submit
                 </button>
               </div>
@@ -171,7 +162,6 @@ const Navbar = () => {
           </div>
         </div>
       )}
-
     </>
   );
 };

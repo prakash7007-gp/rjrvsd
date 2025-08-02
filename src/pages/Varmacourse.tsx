@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import bgVector from "../assets/background2.jpg"; // Your abstract vector-style background
-import rightImage from "../assets/hero-campus.jpg"; // Add your Varma image here
+import rightImage from "../assets/varmaimage.jpg"; // Add your Varma image here
 
 const Varmacourse = () => {
   return (

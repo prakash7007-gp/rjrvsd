@@ -1,84 +1,74 @@
 import React from "react";
-import bgImage from "../assets/certificate.avif";
-import benefitImage from "../assets/Herobanner.jpg"; // rename and save uploaded image here
+import certImage from "@/assets/certificate.png"; // ✅ Replace with your image
 
 const Certification = ({ name, course, date }) => {
   return (
-    <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto my-8 p-4 gap-6">
+    <div className="flex flex-col md:flex-row w-full max-w-7xl mx-auto my-12 p-6 gap-8">
       
-      {/* Left Side: Benefits of an Alison Certificate */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4 rounded-xl ">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">Benefits Of An Alison Certificate</h2>
-        
-        <div className="space-y-4 text-gray-700">
+      {/* ✅ Left Side: Benefits */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4 rounded-xl">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          Benefits of an RJR VSD Certification
+        </h2>
+
+        <div className="space-y-5 text-gray-700 text-base leading-relaxed">
           <div className="flex items-start gap-3">
-            <div className="text-green-500 text-xl">✔</div>
+            <span className="text-green-600 text-xl">✔</span>
             <div>
-              <p className="font-semibold">Certify Your Skills</p>
-              <p className="text-sm">A CPD accredited Alison Certificate certifies the skills you’ve learned</p>
+              <p className="font-semibold">CPD Accredited & Recognized</p>
+              <p className="text-sm">Our certifications are industry-recognized and add value to your resumé.</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="text-green-500 text-xl">🌟</div>
+            <span className="text-green-600 text-xl">🌟</span>
             <div>
-              <p className="font-semibold">Stand Out From The Crowd</p>
-              <p className="text-sm">Add your Alison Certification to your resumé and stay ahead of the competition</p>
+              <p className="font-semibold">Skill-Oriented Education</p>
+              <p className="text-sm">Designed to provide practical vocational and technical skills for real-world success.</p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="text-green-500 text-xl">🚀</div>
+            <span className="text-green-600 text-xl">🎯</span>
             <div>
-              <p className="font-semibold">Advance in Your Career</p>
-              <p className="text-sm">Share your Alison Certification with potential employers to show off your skills and capabilities</p>
+              <p className="font-semibold">Career Growth</p>
+              <p className="text-sm">Demonstrates your commitment to continuous learning and excellence.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 text-xl">📚</span>
+            <div>
+              <p className="font-semibold">Supportive Learning Environment</p>
+              <p className="text-sm">Get access to expert trainers, lab facilities, and mentorship during your course.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 text-xl">🚀</span>
+            <div>
+              <p className="font-semibold">Boost Employability</p>
+              <p className="text-sm">Share your certificate with employers and open doors to better job opportunities.</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <span className="text-green-600 text-xl">📈</span>
+            <div>
+              <p className="font-semibold">Life-Long Value</p>
+              <p className="text-sm">RJR VSD certificates are valid for life and showcase your dedication to skill development.</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Right Side: Certificate */}
-      <div className="w-full md:w-1/2">
-        <div
-          className="w-full p-4 sm:p-6 md:p-8 rounded-xl shadow-lg text-center border-4 border-red-600 relative overflow-hidden"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0 bg-white/10 z-0 rounded-xl"></div>
-
-          <div className="relative z-10">
-            <h2 className="text-xl sm:text-2xl font-bold text-red-600 mb-2 sm:mb-4 uppercase">
-              Certificate of Completion
-            </h2>
-            <p className="text-gray-700 text-base sm:text-lg">This is proudly presented to</p>
-
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-black my-2 sm:my-4">
-              {name}
-            </h1>
-
-            <p className="text-gray-700 text-base sm:text-lg">For successfully completing the course:</p>
-            <h3 className="text-lg sm:text-xl font-bold text-red-500 mt-2 mb-4">{course}</h3>
-
-            <p className="text-gray-600 mt-2 sm:mt-4">
-              Date: <span className="font-medium">{date}</span>
-            </p>
-
-            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between px-2 sm:px-8 text-xs sm:text-sm text-gray-500 gap-4 sm:gap-0">
-              <div className="flex-1">
-                <hr className="border-t-2 border-gray-400 w-24 sm:w-40 mx-auto mb-1" />
-                <p>Authorized Signatory</p>
-              </div>
-              <div className="flex-1">
-                <hr className="border-t-2 border-gray-400 w-24 sm:w-40 mx-auto mb-1" />
-                <p>Course Coordinator</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* ✅ Right Side: Certificate Image */}
+      <div className="w-full md:w-1/2 flex justify-center items-center">
+        <img
+          src={certImage}
+          alt="RJR Certificate"
+          className="w-full max-w-md rounded-xl shadow-xl border-4 border-primary"
+        />
       </div>
     </div>
   );
