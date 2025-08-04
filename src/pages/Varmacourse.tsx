@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import bgVector from "../assets/background2.jpg"; // Your abstract vector-style background
-import rightImage from "../assets/varmaimage.jpg"; // Add your Varma image here
+import bgVector from "../assets/varmabg.jpg"; // Your abstract vector-style background
+import rightImage from "../assets/varma2.jpg"; // Add your Varma image here
 
 const Varmacourse = () => {
   return (
@@ -25,16 +25,16 @@ const Varmacourse = () => {
             className="bg-white/10 backdrop-blur-md p-8 rounded-xl "
           >
             <motion.h1
-              className="text-3xl md:text-5xl font-bold mb-4"
+              className="text-3xl md:text-5xl font-bold mb-4 text-primary text-shadow"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Diploma in Varma Massage
+              <span className="text-black"> Diploma in </span> Varma Massage
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-200 mb-6"
+              className="text-lg md:text-xl  mb-6 "
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -43,7 +43,7 @@ const Varmacourse = () => {
             </motion.p>
 
             <motion.ul
-              className="space-y-2 text-base text-gray-200 list-disc list-inside mb-6"
+              className="space-y-2 text-base text-gray-200 list-disc list-inside mb-6 text-black font-semiblod"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.6 }}

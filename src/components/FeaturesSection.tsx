@@ -2,7 +2,7 @@ import { BookOpen, Users, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Certification from "@/pages/Certification";
-import bgImage from "@/assets/scssimage.jpg"; // ✅ Background image import
+import bgImage from "@/assets/wave1.jpg"; // ✅ Background image import
 
 const features = [
   {

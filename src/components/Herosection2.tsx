@@ -20,7 +20,7 @@ const HeroSection1 = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto fade-in mb-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-10 leading-tight text-shadow">
+          <h1 className="text-5xl md:text-7xl font-bold mb-10 leading-tight text-shadow-lg">
             RJR Vocational Skill
             <span className="block text-primary-light">Development</span>
           </h1>

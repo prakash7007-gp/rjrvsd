@@ -7,11 +7,11 @@ const Certification = ({ name, course, date }) => {
       
       {/* ✅ Left Side: Benefits */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4 rounded-xl">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          Benefits of an RJR VSD Certification
+        <h2 className="text-5xl font-bold text-gray-800 mb-6 text-black ">
+          Benefits of an <span className="text-primary text-shadow"> RJR VSD Certification</span>
         </h2>
 
-        <div className="space-y-5 text-gray-700 text-base leading-relaxed">
+        <div className="space-y-5 text-gray-700 text-base leading-relaxed ">
           <div className="flex items-start gap-3">
             <span className="text-green-600 text-xl">✔</span>
             <div>
@@ -63,11 +63,11 @@ const Certification = ({ name, course, date }) => {
       </div>
 
       {/* ✅ Right Side: Certificate Image */}
-      <div className="w-full md:w-1/2 flex justify-center items-center">
+      <div className="w-full md:w-1/2 flex justify-center items-center ">
         <img
           src={certImage}
           alt="RJR Certificate"
-          className="w-full max-w-md rounded-xl shadow-xl border-4 border-primary"
+          className="w-full max-w-md rounded-xl shadow-2xl border-4 border-primary"
         />
       </div>
     </div>
